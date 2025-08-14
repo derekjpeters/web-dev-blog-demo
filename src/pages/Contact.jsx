@@ -17,7 +17,7 @@ export default function Contact() {
     }
 
     //Handle Submit
-    const HandleSubmit = (e) => {
+    const handleSubmit = (e) => {
         //1. Prevent the browser's default form submission behavior
         e.preventDefault();
         //2. Log the current form data
@@ -28,6 +28,32 @@ export default function Contact() {
         navigate('/thank-you')
     }
 
-
+    return (
+        <div className='container'>
+            <h1>Contact Us</h1>
+            <form onSubmit={handleSubmit} className='card'>
+                <label>
+                    Name:
+                    <input
+                    type = "text"
+                    name = "name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    />
+                </label>
+                <br />
+                <label>
+                    Message:
+                    <textarea
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                    ></textarea>
+                </label>
+                <br />
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    )
 
 }

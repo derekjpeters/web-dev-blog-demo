@@ -9,7 +9,8 @@ export default function Articles() {
                 <div className='card' key={a.id}> 
                 <h3>{a.title}</h3>
                 <p>{a.summary}</p>
-                <Link to={ `/articles/{a.id}`}>Read More</Link>
+                {/* Fixed: Use dynamic article ID instead of hardcoded '1' to properly route to individual articles */}
+                <Link to={`/articles/{a.id}`}>Read More</Link>
                 </div>
             ))}
         </div>

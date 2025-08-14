@@ -1,10 +1,14 @@
-import { useParams, Link } from 'react-router-dom';
+import { Outlet, useSearchParams, useParams, Link } from 'react-router-dom';
 import { articles } from '../data/articles';
 
 export default function Article() {
     const { id } = useParams();
+    // const [useSearchParams] = useSearchParams();
+    // const ref = useSearchParams.get('ref');
+
     const article = articles.find(a => a.id === id);
 
+    console.log(article)
     if (!article) {
         return (
             <div className='container'>
@@ -18,8 +22,8 @@ export default function Article() {
     return (
         <div className='container'>
             <h1>{article.title}</h1>
-            <p><em>placeholder:</em>{article.id}</p>
-            <p>Placeholder to Build onto</p>
+            <p><em>slug:</em> {article.id} </p>
+            <p>{article.summary}</p>
             <p><Link to="/articles">All Articles</Link></p>
         </div>
     )
