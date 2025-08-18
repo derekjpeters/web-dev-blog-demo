@@ -24,6 +24,7 @@ export default function Article() {
             <h1>{article.title}</h1>
             <p><em>slug:</em> {article.id} </p>
             <p>{article.summary}</p>
+            
             <p><Link to="/articles">All Articles</Link></p>
         </div>
     )

@@ -2,15 +2,18 @@ import { Link } from 'react-router-dom';
 import { articles } from '../data/articles';
 
 export default function Articles() {
+	console.log(articles)
     return (
-        <div className='conatainer'>
+        <div className='container'>
             <h1>Articles</h1>
             {articles.map(a => (
+				
                 <div className='card' key={a.id}> 
                 <h3>{a.title}</h3>
                 <p>{a.summary}</p>
-                {/* Fixed: Use dynamic article ID instead of hardcoded '1' to properly route to individual articles */}
-                <Link to={`/articles/{a.id}`}>Read More</Link>
+				
+                <Link to={`/articles/${a.id}`} onClick={() => console.log(a.id)} >Read More</Link>
+				
                 </div>
             ))}
         </div>
