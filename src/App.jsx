@@ -7,11 +7,12 @@ import NotFound from "./pages/NotFound";
 import ArticleComments from "./pages/ArticleComments";
 import Contact from "./pages/Contact";
 import ThankYou from "./pages/ThankYou";
+import { ArticlesProvider } from "./contexts/ArticlesContext";
 
 
 export default function App() {
 	return (
-		<>
+		<ArticlesProvider>
 			<Navbar />
 			<Routes>
 				<Route path="/" element={<Home />} />
@@ -25,6 +26,6 @@ export default function App() {
 				<Route path="*" element={<NotFound />} />
 
 			</Routes>
-		</>
+		</ArticlesProvider>
 	);
 }

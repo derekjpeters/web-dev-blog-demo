@@ -14,13 +14,13 @@ export default function Contact() {
 	});
 
 	useEffect(() => {
-		console.log("📱 Contact component mounted");
+		console.log("Contact component mounted");
 		console.log("Initial form state:", formData);
-		return () => console.log("📱 Contact component unmounted");
+		return () => console.log("Contact component unmounted");
 	}, []);
 
 	useEffect(() => {
-		console.log("📊 Form data updated:", formData);
+		console.log("Form data updated:", formData);
 	}, [formData]);
 
 	//Handle form changes dynamically
@@ -49,39 +49,39 @@ export default function Contact() {
 		console.log("Validating form data:", formData);
 		
 		if (!formData.name.trim()) {
-			console.log("❌ Validation failed: Missing Name");
+			console.log("Validation failed: Missing Name");
 			console.log("Name field value:", JSON.stringify(formData.name));
 			return { ok: false, reason: "Please Enter Your Name." };
 		}
-		console.log("✅ Name validation passed");
+		console.log("Name validation passed");
 
 		if (
 			!formData.email.trim() ||
 			!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)
 		) {
-			console.log("❌ Validation failed: Invalid email");
+			console.log("Validation failed: Invalid email");
 			console.log("Email field value:", JSON.stringify(formData.email));
 			console.log("Email regex test:", /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email));
 			return { ok: false, reason: "Please enter a valid email." };
 		}
-		console.log("✅ Email validation passed");
+		console.log("Email validation passed");
 
 		if (!formData.subject.trim()) {
-			console.log("❌ Validation failed: Missing Subject");
+			console.log("Validation failed: Missing Subject");
 			console.log("Subject field value:", JSON.stringify(formData.subject));
 			return { ok: false, reason: "Please enter a subject." };
 		}
-		console.log("✅ Subject validation passed");
+		console.log("Subject validation passed");
 
 		if (!formData.message.trim() || formData.message.trim().length < 10) {
-			console.log("❌ Validation failed: Message too short or empty");
+			console.log("Validation failed: Message too short or empty");
 			console.log("Message field value:", JSON.stringify(formData.message));
 			console.log("Message length:", formData.message.trim().length);
 			return { ok: false, reason: "Message should be at least 10 characters" };
 		}
-		console.log("✅ Message validation passed");
+		console.log("Message validation passed");
 		
-		console.log("🎉 All validation checks passed!");
+		console.log("All validation checks passed!");
 		return { ok: true };
 	};
 
@@ -149,8 +149,8 @@ export default function Contact() {
 						name="name"
 						value={formData.name}
 						onChange={handleChange}
-                        onFocus={() => console.log('🎯 Focus: name field')}
-                        onBlur={() => console.log('👋 Blur: name field')}
+                        onFocus={() => console.log('Focus: name field')}
+                        onBlur={() => console.log('Blur: name field')}
                         required
 					/>
 				</label>
@@ -162,8 +162,8 @@ export default function Contact() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    onFocus={() => console.log('🎯 Focus: email field')}
-                    onBlur={() => console.log('👋 Blur: email field')}
+                    onFocus={() => console.log('Focus: email field')}
+                    onBlur={() => console.log('Blur: email field')}
                     required
                     />
                     
@@ -176,8 +176,8 @@ export default function Contact() {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    onFocus={() => console.log('🎯 Focus: subject field')}
-                    onBlur={() => console.log('👋 Blur: subject field')}
+                    onFocus={() => console.log('Focus: subject field')}
+                    onBlur={() => console.log('Blur: subject field')}
                     required
                     />
                     
@@ -191,8 +191,8 @@ export default function Contact() {
                     name="category"
                     value={formData.category}
                     onChange={handleChange}
-                    onFocus={() => console.log('🎯 Focus: category dropdown')}
-                    onBlur={() => console.log('👋 Blur: category dropdown')}
+                    onFocus={() => console.log('Focus: category dropdown')}
+                    onBlur={() => console.log('Blur: category dropdown')}
                     >
                         <option value="general">General Comments</option>
                         <option value='bug'>Bug</option>
@@ -211,7 +211,7 @@ export default function Contact() {
                     value="low"
                     checked={formData.priority === 'low'}
                     onChange={handleChange}
-                    onFocus={() => console.log('🎯 Focus: priority low radio')}
+                    onFocus={() => console.log('Focus: priority low radio')}
                     /> Low
                 </label>
                 <label style={{ marginRight: '1rem'}}>
@@ -221,7 +221,7 @@ export default function Contact() {
                     value="medium"
                     checked={formData.priority === 'medium'}
                     onChange={handleChange}
-                    onFocus={() => console.log('🎯 Focus: priority medium radio')}
+                    onFocus={() => console.log('Focus: priority medium radio')}
                     /> Medium
                 </label>
                 <label style={{ marginRight: '1rem'}}>
@@ -231,7 +231,7 @@ export default function Contact() {
                     value="high"
                     checked={formData.priority === 'high'}
                     onChange={handleChange}
-                    onFocus={() => console.log('🎯 Focus: priority high radio')}
+                    onFocus={() => console.log('Focus: priority high radio')}
                     /> High
                 </label>
                 </fieldset>
@@ -243,8 +243,8 @@ export default function Contact() {
                     name="subscribe"
                     checked={formData.subscribe}
                     onChange={handleChange}
-                    onFocus={() => console.log('🎯 Focus: subscribe checkbox')}
-                    onBlur={() => console.log('👋 Blur: subscribe checkbox')}
+                    onFocus={() => console.log('Focus: subscribe checkbox')}
+                    onBlur={() => console.log('Blur: subscribe checkbox')}
                     /> {' '} Subscribe to future udpates
                 </label>
                 <br />
@@ -254,8 +254,8 @@ export default function Contact() {
 						name="message"
 						value={formData.message}
 						onChange={handleChange}
-                        onFocus={() => console.log('🎯 Focus: message field')}
-                    onBlur={() => console.log('👋 Blur: message field')}
+                        onFocus={() => console.log('Focus: message field')}
+                    onBlur={() => console.log('Blur: message field')}
                     placeholder="How can we help? (10+ Chars)"
                     required
 					></textarea>
